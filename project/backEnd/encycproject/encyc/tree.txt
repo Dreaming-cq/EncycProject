@@ -1,0 +1,102 @@
+卷 软件 的文件夹 PATH 列表
+卷序列号为 000C-382A
+D:.
+│  .gitignore
+│  encyc.iml
+│  HELP.md
+│  mvnw
+│  mvnw.cmd
+│  pom.xml
+│  tree.txt
+│  
+├─.mvn
+│  └─wrapper
+│          maven-wrapper.jar
+│          maven-wrapper.properties
+│          MavenWrapperDownloader.java
+│          
+├─src
+│  ├─main
+│  │  ├─java
+│  │  │  └─com
+│  │  │      └─threadnew
+│  │  │          │  EncycprojectApplication.java
+│  │  │          │  
+│  │  │          ├─controller
+│  │  │          │      EncycController.java
+│  │  │          │      index.java
+│  │  │          │      
+│  │  │          ├─dao
+│  │  │          │      EncycDao.java
+│  │  │          │      
+│  │  │          ├─pojo
+│  │  │          │      Encyc.java
+│  │  │          │      EncycResult.java
+│  │  │          │      EncycSolr.java
+│  │  │          │      Page.java
+│  │  │          │      
+│  │  │          ├─service
+│  │  │          │      EncycService.java
+│  │  │          │      
+│  │  │          ├─solr
+│  │  │          │      SolrUtil.java
+│  │  │          │      
+│  │  │          └─webmagic
+│  │  │                  EncycPageProcessor.java
+│  │  │                  EncycPipeline.java
+│  │  │                  SpikeFileCacheQueueScheduler.java
+│  │  │                  
+│  │  └─resources
+│  │      │  application.yml
+│  │      │  
+│  │      ├─static
+│  │      └─templates
+│  └─test
+│      └─java
+│          └─com
+│              └─threadnew
+│                      EncycprojectApplicationTests.java
+│                      
+└─target
+    ├─classes
+    │  │  application.yml
+    │  │  
+    │  └─com
+    │      └─threadnew
+    │          │  EncycprojectApplication.class
+    │          │  
+    │          ├─controller
+    │          │      EncycController.class
+    │          │      index.class
+    │          │      
+    │          ├─dao
+    │          │      EncycDao.class
+    │          │      
+    │          ├─pojo
+    │          │      Encyc.class
+    │          │      EncycResult.class
+    │          │      EncycSolr.class
+    │          │      Page.class
+    │          │      
+    │          ├─service
+    │          │      EncycService.class
+    │          │      
+    │          ├─solr
+    │          │      SolrUtil.class
+    │          │      
+    │          └─webmagic
+    │                  EncycPageProcessor.class
+    │                  EncycPipeline.class
+    │                  SpikeFileCacheQueueScheduler$1.class
+    │                  SpikeFileCacheQueueScheduler$2.class
+    │                  SpikeFileCacheQueueScheduler.class
+    │                  
+    ├─generated-sources
+    │  └─annotations
+    ├─generated-test-sources
+    │  └─test-annotations
+    └─test-classes
+        └─com
+            └─threadnew
+                    EncycprojectApplicationTests.class
+                    

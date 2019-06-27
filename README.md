@@ -1,16 +1,81 @@
+
+<img src="resource/img/plogo.png" height="120px"></img>
 # EncycProject
-> EncycProject项目采用的前后台分离；目前项目完成的是后台模块，前台未完待续中；
+> EncycProject项目使用现在流行的前后端分离技术；此项目创作目的是实践。利用此项目快速搭建环境和快速入门。该项目的主线是建立宠物社区网站。目前该项目完成第一个模块：宠物百科；剩余模块陆续开发中。（此项目可以变更，第一模块耦合度低）
+---
+### 项目模块
+- **宠物百科**：利用爬虫爬取相关数据，建立中心库，搜索引擎使用的solr7  
+    -  **模块的项目演示**
+    >如下图 [图示链接](resource/img/project.gif)
+    <img src="resource/img/project.gif"/>
+
+- 敬请期待。。。
 ---
 ## 1 项目的体系结构
+### 1.1 后端
 >如下图所示     
+```
+D:.
 
-<img src="other/img/structure.jpg"></img>  
->>其中 **webmagic**目录下的文件是关于爬虫的实现；**solr** 目录下的文件是关于solr的实现。  
+│  pom.xml
+│
+│          
+├─src
+│  ├─main
+│  │  ├─java
+│  │  │  └─com
+│  │  │      └─threadnew
+│  │  │          │  EncycprojectApplication.java
+│  │  │          │  
+│  │  │          ├─controller
+│  │  │          │      EncycController.java ：宠物百科的控制器
+│  │  │          │      index.java
+│  │  │          │      
+│  │  │          ├─dao
+│  │  │          │      EncycDao.java
+│  │  │          │      
+│  │  │          ├─pojo
+│  │  │          │      Encyc.java
+│  │  │          │      EncycResult.java
+│  │  │          │      EncycSolr.java
+│  │  │          │      Page.java
+│  │  │          │      
+│  │  │          ├─service
+│  │  │          │      EncycService.java
+│  │  │          │      
+│  │  │          ├─solr  ：sorl的实现类
+│  │  │          │      SolrUtil.java
+│  │  │          │      
+│  │  │          └─webmagic : 有关爬虫的实现类
+│  │  │                  EncycPageProcessor.java
+│  │  │                  EncycPipeline.java
+│  │  │                  SpikeFileCacheQueueScheduler.java
+│  │  │                  
+│  │  └─resources
+│  │      │  application.yml
+│  │      │  
+│  │      ├─static
+│  │      └─templates
+│  └─test
+│      └─java
+│          └─com
+│              └─threadnew
+│                      EncycprojectApplicationTests.java
+│                      
+└
+```
+>>其中 **webmagic**目录下的文件是关于爬虫的实现；**solr** 目录下的文件是关于solr的实现。   
+ ### 1.2 前端    
+ >如下图所示    
+
+<img src="resource/img/front.jpg"/>  
+
+> 其中上图红色标记此处要在开发环境中配置代理，否则跨域无法访问。
 ## 2 技术选型  
 ### 2.1 后台
 - springboot2
 - Mybatis
-- Solr
+- solr
 - webMagic（Java的爬虫框架）
 - druid
 ### 2.2 前台（待续）
@@ -18,10 +83,9 @@
 - webPack
 - vue-router
 - axios
-- MintUI
-- MUI 
+- vant （有赞的前端的ui框架）
 ---
-##3 项目搭建
+## 3 项目搭建
 ### 3.1 框架整合
 #### 3.1.1 pom.xml
 ```
@@ -160,17 +224,33 @@ server:
   port: 8100
 
 ```
->未完待续
+#### 3.1.3 前端的axios的代理
+>在config文件夹下的index.js中的proxyTable下添加如下代码
+```
+ '/apis':{
+        target: 'http://192.168.43.103:8100/',  // 后台api
+        changeOrigin: true,  //是否跨域
+        // secure: true,
+        pathRewrite: {
+          '^/apis': ''   //需要rewrite的,
+        }
+      }
+```
+> 未完待续
 ---
 ## 4 项目效果
 #### 4.1 爬虫项目图：  
 **爬虫数据**
-<img src="other/img/webmagic.jpg"/>  
+<img src="resource/img/webmagic.jpg"/>  
 **数据库数据**
-<img src="other/img/data.jpg"/>   
+<img src="resource/img/data.jpg"/>  
+**前端**
+<img src="resource/img/vuehome.jpg"/> 
+<img src="resource/img/vuedetail.jpg"/>
 >待续  
 ## 5 说明  
->爬取数据搜索：目前采用的是solr框架。（可以根据实际情况更改）
+### 项目
+> 此项目读者可以下载在此基础上重新编写，或者利用此项目的环境进行别的项目开发。
 
 
 
